@@ -5,7 +5,7 @@
     import squareUrl from "../assets/square.svg";
     import triangleUrl from "../assets/triangle.svg";
 
-    function get2dURL() {
+    function get2DURL() {
         switch (shape) {
             case SHAPE2D.CIRCLE:
                 return circleUrl;
@@ -33,7 +33,7 @@
 </script>
 
 <div draggable={draggable} on:dragstart={dragStart} role="none" class:border={border}>
-    <img width=64 height=64 src={get2dURL()} alt="" draggable="false" />
+    <img width=64 height=64 src={get2DURL()} alt="" draggable="false" />
 </div>
 
 <style>
