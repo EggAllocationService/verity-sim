@@ -20,7 +20,7 @@
     export let shape: SHAPE2D = SHAPE2D.CIRCLE;
     export let border: boolean = true;
 
-    let draggable: boolean = true;
+    export let draggable: boolean = true;
 
     function dragStart(ev: DragEvent) {
         if (!draggable) return;

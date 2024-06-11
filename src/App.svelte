@@ -1,31 +1,66 @@
 <script lang="ts">
     import Shape from './lib/Shape.svelte';
     import Shape2D from './lib/Shape2D.svelte';
+    import { SHAPE2D } from './lib/shapes';
+
+    type Callouts = {left: SHAPE2D, mid: SHAPE2D, right: SHAPE2D};
+
+    let calls: Callouts = createRandomCallouts();
+
+    function createRandomCallouts(): Callouts {
+        let arr = [SHAPE2D.CIRCLE, SHAPE2D.SQUARE, SHAPE2D.TRIANGLE];
+        // Shuffle the array
+        for (let i = arr.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+
+        return {
+            left: arr[0],
+            mid: arr[1],
+            right: arr[2]
+        };
+    }
+
 </script>
 
 <main>
-  <p>
-    <Shape selected={true} />  
-  </p>
-  <p>
-    <Shape2D />
-  </p>
+  <div class="callouts">
+    <h2>
+      Callouts
+    </h2>
+    <div class="callouts-symbols">
+      <Shape2D border={false} draggable={false} shape={calls.left} />
+      <Shape2D border={false} draggable={false} shape={calls.mid} />
+      <Shape2D border={false} draggable={false} shape={calls.right} />
+    </div>
+  </div>
 </main>
 
 <style>
-  .logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-    transition: filter 300ms;
+  .callouts {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 2rem;
+    gap: 1em;
+    padding: 3em;
+    border: 1px solid white;
   }
-  .logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
+  .callouts > h2 {
+    font-size: 2em;
   }
-  .logo.svelte:hover {
-    filter: drop-shadow(0 0 2em #ff3e00aa);
+  .callouts-symbols {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 3em;
   }
-  .read-the-docs {
-    color: #888;
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
   }
 </style>

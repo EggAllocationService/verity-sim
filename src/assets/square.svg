@@ -1,1 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 12 12"><path style="fill:none;stroke:#000;stroke-width:.60000002;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="M-.59297 12.449402V2.4489026M-.59297 2.4489026h-10.0005M-.59297 12.449403h-10.000501M-10.59347 12.449403V2.4489026" transform="translate(11.59322 -1.449153)"/></svg>
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="100" height="100">
+  <polygon points="15,15 15,85 85,85 85,16" fill="none" stroke="black" stroke-width="1.2" />
+</svg>
