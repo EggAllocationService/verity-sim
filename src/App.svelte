@@ -17,7 +17,7 @@
     let num_swaps: number = 0;
     let is_complete: boolean = false;
     let start_time: number = Date.now();
-    let show_hints = true;
+    let show_hints = false;
 
     function createRandomCallouts(): Callouts {
         let arr = [SHAPE2D.CIRCLE, SHAPE2D.SQUARE, SHAPE2D.TRIANGLE];
