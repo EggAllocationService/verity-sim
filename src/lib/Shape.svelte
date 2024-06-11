@@ -33,7 +33,7 @@
         droppable = true;
     }
 
-    function getShapeImageURL(): string {
+    function getShapeImageURL(shape: SHAPE): string {
         switch (shape) {
             case SHAPE.SPHERE:
                 return sphereUrl;
@@ -48,12 +48,12 @@
             case SHAPE.PRISM:
                 return prismUrl;
         }
-        return "";
     }
+
 </script>
 
 <div on:drop={drop} on:dragover={dragover} on:dragleave={() => droppable = false} role="none" class:drop={droppable} class:selected={selected}>
-    <img width=64 height=64 src={getShapeImageURL()} alt="" />
+    <img width=64 height=64 src={getShapeImageURL(shape)} alt="" />
     <p>{shape}</p>
 </div>
 

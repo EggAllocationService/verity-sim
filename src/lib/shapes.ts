@@ -26,6 +26,9 @@ export function construct_shape_from_2d(a: SHAPE2D, b: SHAPE2D): SHAPE {
     } else if (a === SHAPE2D.SQUARE && b === SHAPE2D.TRIANGLE) {
         return SHAPE.PRISM;
     } else {
+        if (a == undefined || b == undefined) {
+            debugger;
+        }
         return construct_shape_from_2d(b, a);
     }
 }
