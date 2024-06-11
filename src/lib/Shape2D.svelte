@@ -18,6 +18,7 @@
     }
 
     export let shape: SHAPE2D = SHAPE2D.CIRCLE;
+    export let border: boolean = true;
 
     let draggable: boolean = true;
 
@@ -31,7 +32,7 @@
     }
 </script>
 
-<div draggable={draggable} on:dragstart={dragStart} role="none">
+<div draggable={draggable} on:dragstart={dragStart} role="none" class:border={border}>
     <img width=64 height=64 src={get2dURL()} alt="" draggable="false" />
 </div>
 
@@ -42,8 +43,19 @@
         align-items: center;
         justify-content: center;
         padding: 1rem;
-        border: 1px solid black;
         border-radius: 0.5rem;
         margin: 0.5rem;
+    }
+    div.border {
+        border: 1px solid black;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        div.border {
+            border-color: white;
+        }
+        img {
+            filter: invert(1.0);
+        }
     }
 </style>

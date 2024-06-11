@@ -65,4 +65,12 @@
         border-radius: 0.5rem;
         margin: 0.5rem;
     }
+    @media (prefers-color-scheme: dark) {
+        div {
+            border-color: white;
+        }
+        img {
+            filter: invert(1.0);
+        }
+    }
 </style>
