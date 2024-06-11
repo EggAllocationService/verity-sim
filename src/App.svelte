@@ -5,7 +5,7 @@
 
 <main>
   <p>
-    <Shape />  
+    <Shape selected={true} />  
   </p>
   <p>
     <Shape2D />
