@@ -7,11 +7,13 @@
     import pyramidUrl from "../assets/pyramid.svg";
     import prismUrl from "../assets/prism.svg";
     import { createEventDispatcher } from "svelte";
+    import Shape2D from "./Shape2D.svelte";
 
     const dispatcher = createEventDispatcher<{shapedropped: SHAPE2D}>();
 
     export let shape: SHAPE = SHAPE.SPHERE;
     export let selected: boolean = false;
+    export let hints: boolean = false;
 
     let droppable: boolean = false;
 
@@ -55,9 +57,23 @@
 <div on:drop={drop} on:dragover={dragover} on:dragleave={() => droppable = false} role="none" class:drop={droppable} class:selected={selected}>
     <img width=64 height=64 src={getShapeImageURL(shape)} alt="" />
     <p>{shape}</p>
+    {#if hints}
+    <div class="hints">
+        <Shape2D shape={decompose_shape(shape)[0]} draggable={false} border={false} width={28} height={28} padding={false} />
+        <span>+</span>
+        <Shape2D shape={decompose_shape(shape)[1]} draggable={false} border={false} width={28} height={28} padding={false} />
+    </div>
+{/if}
 </div>
 
 <style>
+    .hints {
+        display: flex;
+        flex-direction: row;
+        gap: 0.1em;
+        border: none;
+        margin: 0px;
+    }
     .drop {
         border: 1px solid gold;
     }

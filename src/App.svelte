@@ -17,6 +17,7 @@
     let num_swaps: number = 0;
     let is_complete: boolean = false;
     let start_time: number = Date.now();
+    let show_hints = true;
 
     function createRandomCallouts(): Callouts {
         let arr = [SHAPE2D.CIRCLE, SHAPE2D.SQUARE, SHAPE2D.TRIANGLE];
@@ -123,6 +124,10 @@
     <h2>
       Inside Callouts
     </h2>
+    <span>
+      <label for="hints">Show hints: </label>
+      <input type="checkbox" bind:checked={show_hints} id="hints" />
+    </span>
     <div class="callouts-symbols">
       <Shape2D border={false} draggable={false} shape={calls.left} />
       <Shape2D border={false} draggable={false} shape={calls.mid} />
@@ -134,9 +139,9 @@
       Statue Objects
     </h2>
     <div class="state-symbols">
-      <Shape shape={state.left} selected={state.selected?.slot === SelectedSlot.LEFT} on:shapedropped={onDropped(SelectedSlot.LEFT)} />
-      <Shape shape={state.mid} selected={state.selected?.slot === SelectedSlot.MID} on:shapedropped={onDropped(SelectedSlot.MID)} />
-      <Shape shape={state.right} selected={state.selected?.slot === SelectedSlot.RIGHT} on:shapedropped={onDropped(SelectedSlot.RIGHT)} />
+      <Shape shape={state.left} selected={state.selected?.slot === SelectedSlot.LEFT} on:shapedropped={onDropped(SelectedSlot.LEFT)} hints={show_hints}/>
+      <Shape shape={state.mid} selected={state.selected?.slot === SelectedSlot.MID} on:shapedropped={onDropped(SelectedSlot.MID)} hints={show_hints} />
+      <Shape shape={state.right} selected={state.selected?.slot === SelectedSlot.RIGHT} on:shapedropped={onDropped(SelectedSlot.RIGHT)} hints={show_hints} />
     </div>
   </div>
 </main>
@@ -160,6 +165,10 @@
 {/if}
 
 <style>
+  #hints {
+    text-align: center;
+    transform:translateY(-20%) scale(1.25);
+  }
   .modal-backdrop {
     position: fixed;
     top: 0;

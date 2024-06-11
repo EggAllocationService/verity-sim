@@ -19,6 +19,9 @@
 
     export let shape: SHAPE2D = SHAPE2D.CIRCLE;
     export let border: boolean = true;
+    export let width = 64;
+    export let height = 64;
+    export let padding = true;
 
     export let draggable: boolean = true;
 
@@ -32,8 +35,8 @@
     }
 </script>
 
-<div draggable={draggable} on:dragstart={dragStart} role="none" class:border={border}>
-    <img width=64 height=64 src={get2DURL(shape)} alt="" draggable="false" />
+<div draggable={draggable} on:dragstart={dragStart} role="none" class:border={border} class:padding={padding}>
+    <img {width} {height} src={get2DURL(shape)} alt="" draggable="false" />
 </div>
 
 <style>
@@ -42,9 +45,11 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 1rem;
         border-radius: 0.5rem;
         margin: 0.5rem;
+    }
+    .padding {
+        padding: 1rem;
     }
     div.border {
         border: 1px solid black;
