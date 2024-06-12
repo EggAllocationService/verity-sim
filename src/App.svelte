@@ -8,6 +8,23 @@
     decompose_shape,
   } from "./lib/shapes";
   import { remove_one_item_from_array } from "./lib/util";
+  import puzzleJson from "./assets/puzzles.json"
+
+  type Puzzle = {
+      inside: {
+          left: SHAPE2D,
+          mid: SHAPE2D,
+          right: SHAPE2D
+          
+      },
+      outside: {
+          left: SHAPE,
+          mid: SHAPE,
+          right: SHAPE
+      
+      }
+  }
+  const puzzles: Puzzle[] = puzzleJson as Puzzle[];
 
   enum SelectedSlot {
     LEFT = "left",
@@ -22,84 +39,27 @@
     selected: { slot: SelectedSlot; shape: SHAPE2D } | null;
   };
 
-  let calls: Callouts = createRandomCallouts();
-  let state: PuzzleState = createRandomState(calls);
+  let calls: Callouts;
+  let state: PuzzleState;
+  randomize();
   let num_swaps: number = 0;
   let is_complete: boolean = false;
   let start_time: number = Date.now();
   let show_hints = false;
 
-  function createRandomCallouts(): Callouts {
-    let arr = [SHAPE2D.CIRCLE, SHAPE2D.SQUARE, SHAPE2D.TRIANGLE];
-    // Shuffle the array
-    for (let i = arr.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [arr[i], arr[j]] = [arr[j], arr[i]];
-    }
-
-    return {
-      left: arr[0],
-      mid: arr[1],
-      right: arr[2],
+  function randomize() {
+    var i = Math.floor(Math.random() * puzzles.length);
+    calls = {
+      left: puzzles[i].inside.left,
+      mid: puzzles[i].inside.mid,
+      right: puzzles[i].inside.right,
     };
-  }
-  function createRandomState(calls: Callouts): PuzzleState {
-    let arr: SHAPE2D[] = [];
-
-    let a: [SHAPE2D, SHAPE2D] | undefined = undefined;
-    let b: [SHAPE2D, SHAPE2D] | undefined = undefined;
-    let c: [SHAPE2D, SHAPE2D] | undefined = undefined;
-
-    if (Math.random() > 0.5) {
-      const threeDShapes = [SHAPE.SPHERE, SHAPE.CUBE, SHAPE.PYRAMID];
-      var toDecompose = threeDShapes[Math.floor(Math.random() * 3)];
-      var l = Math.random();
-      if (l > 0.66) {
-        a = decompose_shape(toDecompose);
-      } else if (l > 0.33) {
-        b = decompose_shape(toDecompose);
-      } else {
-        c = decompose_shape(toDecompose);
-      }
-      arr = threeDShapes
-        .filter((x) => x != toDecompose)
-        .flatMap((x) => decompose_shape(x));
-    } else {
-      arr = [
-        SHAPE2D.CIRCLE,
-        SHAPE2D.SQUARE,
-        SHAPE2D.TRIANGLE,
-        SHAPE2D.CIRCLE,
-        SHAPE2D.SQUARE,
-        SHAPE2D.TRIANGLE,
-      ];
-    }
-    // shuffle array a few times
-    for (let i = arr.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [arr[i], arr[j]] = [arr[j], arr[i]];
-    }
-    if (a == undefined) {
-      a = [arr.shift()!, arr.shift()!];
-    }
-    if (b == undefined) {
-      b = [arr.shift()!, arr.shift()!];
-    }
-    if (c == undefined) {
-      c = [arr.shift()!, arr.shift()!];
-    }
-
-    let tmp: PuzzleState = {
-      left: construct_shape_from_2d(a[0], a[1]),
-      mid: construct_shape_from_2d(b[0], b[1]),
-      right: construct_shape_from_2d(c[0], c[1]),
+    state = {
+      left: puzzles[i].outside.left,
+      mid: puzzles[i].outside.mid,
+      right: puzzles[i].outside.right,
       selected: null,
     };
-
-    if (isComplete(tmp, calls)) {
-      return createRandomState(calls);
-    }
-    return tmp;
   }
 
   function isComplete(state: PuzzleState, calls: Callouts): boolean {
@@ -162,8 +122,7 @@
   }
 
   function reset() {
-    calls = createRandomCallouts();
-    state = createRandomState(calls);
+    randomize();
     num_swaps = 0;
     is_complete = false;
     start_time = Date.now();
