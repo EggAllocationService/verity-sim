@@ -182,6 +182,9 @@
     />
   </div>
 </div>
+<div id ="credit">
+  @EggAllocationService with ❤️
+</div>
 
 {#if is_complete}
   <div class="modal-backdrop">
@@ -199,6 +202,16 @@
 {/if}
 
 <style>
+  #credit {
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+    padding: 1em;
+    font-size: 1.5em;
+    background:rgb(24, 24, 24);
+    border-radius: 100vh;
+    font-size: 11px;
+  }
   #hints {
     text-align: center;
     transform: translateY(-20%) scale(1.25);
