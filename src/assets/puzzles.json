@@ -18,9 +18,405 @@
       "right": "square"
     },
     "outside": {
+      "left": "pyramid",
+      "mid": "sphere",
+      "right": "cube"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "circle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "pyramid",
+      "mid": "cylinder",
+      "right": "cylinder"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "circle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "pyramid",
+      "mid": "sphere",
+      "right": "cube"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "circle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "pyramid",
+      "mid": "sphere",
+      "right": "cube"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "circle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "pyramid",
+      "mid": "cylinder",
+      "right": "cylinder"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "circle",
+      "right": "square"
+    },
+    "outside": {
       "left": "cone",
       "mid": "cylinder",
       "right": "prism"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "circle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "cone",
+      "mid": "cylinder",
+      "right": "prism"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "circle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "cone",
+      "mid": "cylinder",
+      "right": "prism"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "circle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "cone",
+      "mid": "cylinder",
+      "right": "prism"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "circle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "cone",
+      "mid": "cone",
+      "right": "cube"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "circle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "cone",
+      "mid": "cone",
+      "right": "cube"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "circle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "prism",
+      "mid": "sphere",
+      "right": "prism"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "circle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "prism",
+      "mid": "cone",
+      "right": "cylinder"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "circle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "prism",
+      "mid": "cone",
+      "right": "cylinder"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "circle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "prism",
+      "mid": "sphere",
+      "right": "prism"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "circle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "prism",
+      "mid": "cone",
+      "right": "cylinder"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "circle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "prism",
+      "mid": "cone",
+      "right": "cylinder"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "circle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "pyramid",
+      "mid": "sphere",
+      "right": "cube"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "circle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "pyramid",
+      "mid": "sphere",
+      "right": "cube"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "circle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "pyramid",
+      "mid": "cylinder",
+      "right": "cylinder"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "circle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "pyramid",
+      "mid": "sphere",
+      "right": "cube"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "circle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "pyramid",
+      "mid": "sphere",
+      "right": "cube"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "circle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "pyramid",
+      "mid": "cylinder",
+      "right": "cylinder"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "circle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "cone",
+      "mid": "cylinder",
+      "right": "prism"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "circle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "cone",
+      "mid": "cylinder",
+      "right": "prism"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "circle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "cone",
+      "mid": "cone",
+      "right": "cube"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "circle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "cone",
+      "mid": "cone",
+      "right": "cube"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "circle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "cone",
+      "mid": "cylinder",
+      "right": "prism"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "circle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "cone",
+      "mid": "cylinder",
+      "right": "prism"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "circle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "prism",
+      "mid": "sphere",
+      "right": "prism"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "circle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "prism",
+      "mid": "cone",
+      "right": "cylinder"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "circle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "prism",
+      "mid": "cone",
+      "right": "cylinder"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "circle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "prism",
+      "mid": "sphere",
+      "right": "prism"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "circle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "prism",
+      "mid": "cone",
+      "right": "cylinder"
     }
   },
   {
@@ -54,9 +450,405 @@
       "right": "circle"
     },
     "outside": {
+      "left": "pyramid",
+      "mid": "cube",
+      "right": "sphere"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "square",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "pyramid",
+      "mid": "cylinder",
+      "right": "cylinder"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "square",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "pyramid",
+      "mid": "cube",
+      "right": "sphere"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "square",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "pyramid",
+      "mid": "cube",
+      "right": "sphere"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "square",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "pyramid",
+      "mid": "cylinder",
+      "right": "cylinder"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "square",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "cone",
+      "mid": "cube",
+      "right": "cone"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "square",
+      "right": "circle"
+    },
+    "outside": {
       "left": "cone",
       "mid": "prism",
       "right": "cylinder"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "square",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "cone",
+      "mid": "prism",
+      "right": "cylinder"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "square",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "cone",
+      "mid": "cube",
+      "right": "cone"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "square",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "cone",
+      "mid": "prism",
+      "right": "cylinder"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "square",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "cone",
+      "mid": "prism",
+      "right": "cylinder"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "square",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "prism",
+      "mid": "cylinder",
+      "right": "cone"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "square",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "prism",
+      "mid": "cylinder",
+      "right": "cone"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "square",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "prism",
+      "mid": "cylinder",
+      "right": "cone"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "square",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "prism",
+      "mid": "cylinder",
+      "right": "cone"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "square",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "prism",
+      "mid": "prism",
+      "right": "sphere"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "square",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "prism",
+      "mid": "prism",
+      "right": "sphere"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "square",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "pyramid",
+      "mid": "cube",
+      "right": "sphere"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "square",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "pyramid",
+      "mid": "cube",
+      "right": "sphere"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "square",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "pyramid",
+      "mid": "cylinder",
+      "right": "cylinder"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "square",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "pyramid",
+      "mid": "cube",
+      "right": "sphere"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "square",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "pyramid",
+      "mid": "cube",
+      "right": "sphere"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "square",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "pyramid",
+      "mid": "cylinder",
+      "right": "cylinder"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "square",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "cone",
+      "mid": "cube",
+      "right": "cone"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "square",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "cone",
+      "mid": "prism",
+      "right": "cylinder"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "square",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "cone",
+      "mid": "prism",
+      "right": "cylinder"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "square",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "cone",
+      "mid": "cube",
+      "right": "cone"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "square",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "cone",
+      "mid": "prism",
+      "right": "cylinder"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "square",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "cone",
+      "mid": "prism",
+      "right": "cylinder"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "square",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "prism",
+      "mid": "cylinder",
+      "right": "cone"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "square",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "prism",
+      "mid": "cylinder",
+      "right": "cone"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "square",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "prism",
+      "mid": "prism",
+      "right": "sphere"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "square",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "prism",
+      "mid": "prism",
+      "right": "sphere"
+    }
+  },
+  {
+    "inside": {
+      "left": "triangle",
+      "mid": "square",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "prism",
+      "mid": "cylinder",
+      "right": "cone"
     }
   },
   {
@@ -90,9 +882,405 @@
       "right": "square"
     },
     "outside": {
+      "left": "sphere",
+      "mid": "pyramid",
+      "right": "cube"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "triangle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "sphere",
+      "mid": "prism",
+      "right": "prism"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "triangle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "sphere",
+      "mid": "pyramid",
+      "right": "cube"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "triangle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "sphere",
+      "mid": "pyramid",
+      "right": "cube"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "triangle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "sphere",
+      "mid": "prism",
+      "right": "prism"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "triangle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "cylinder",
+      "mid": "pyramid",
+      "right": "cylinder"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "triangle",
+      "right": "square"
+    },
+    "outside": {
       "left": "cylinder",
       "mid": "cone",
       "right": "prism"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "triangle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "cylinder",
+      "mid": "cone",
+      "right": "prism"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "triangle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "cylinder",
+      "mid": "pyramid",
+      "right": "cylinder"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "triangle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "cylinder",
+      "mid": "cone",
+      "right": "prism"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "triangle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "cylinder",
+      "mid": "cone",
+      "right": "prism"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "triangle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "cone",
+      "mid": "prism",
+      "right": "cylinder"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "triangle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "cone",
+      "mid": "prism",
+      "right": "cylinder"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "triangle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "cone",
+      "mid": "cone",
+      "right": "cube"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "triangle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "cone",
+      "mid": "cone",
+      "right": "cube"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "triangle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "cone",
+      "mid": "prism",
+      "right": "cylinder"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "triangle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "cone",
+      "mid": "prism",
+      "right": "cylinder"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "triangle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "sphere",
+      "mid": "pyramid",
+      "right": "cube"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "triangle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "sphere",
+      "mid": "pyramid",
+      "right": "cube"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "triangle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "sphere",
+      "mid": "prism",
+      "right": "prism"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "triangle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "sphere",
+      "mid": "pyramid",
+      "right": "cube"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "triangle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "sphere",
+      "mid": "pyramid",
+      "right": "cube"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "triangle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "sphere",
+      "mid": "prism",
+      "right": "prism"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "triangle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "cylinder",
+      "mid": "pyramid",
+      "right": "cylinder"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "triangle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "cylinder",
+      "mid": "cone",
+      "right": "prism"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "triangle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "cylinder",
+      "mid": "cone",
+      "right": "prism"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "triangle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "cylinder",
+      "mid": "pyramid",
+      "right": "cylinder"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "triangle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "cylinder",
+      "mid": "cone",
+      "right": "prism"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "triangle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "cylinder",
+      "mid": "cone",
+      "right": "prism"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "triangle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "cone",
+      "mid": "cone",
+      "right": "cube"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "triangle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "cone",
+      "mid": "cone",
+      "right": "cube"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "triangle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "cone",
+      "mid": "prism",
+      "right": "cylinder"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "triangle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "cone",
+      "mid": "prism",
+      "right": "cylinder"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "triangle",
+      "right": "square"
+    },
+    "outside": {
+      "left": "cone",
+      "mid": "prism",
+      "right": "cylinder"
     }
   },
   {
@@ -126,9 +1314,405 @@
       "right": "triangle"
     },
     "outside": {
+      "left": "sphere",
+      "mid": "cube",
+      "right": "pyramid"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "square",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "sphere",
+      "mid": "prism",
+      "right": "prism"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "square",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "sphere",
+      "mid": "cube",
+      "right": "pyramid"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "square",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "sphere",
+      "mid": "cube",
+      "right": "pyramid"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "square",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "sphere",
+      "mid": "prism",
+      "right": "prism"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "square",
+      "right": "triangle"
+    },
+    "outside": {
       "left": "cylinder",
       "mid": "prism",
       "right": "cone"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "square",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "cylinder",
+      "mid": "prism",
+      "right": "cone"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "square",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "cylinder",
+      "mid": "cylinder",
+      "right": "pyramid"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "square",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "cylinder",
+      "mid": "cylinder",
+      "right": "pyramid"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "square",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "cylinder",
+      "mid": "prism",
+      "right": "cone"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "square",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "cylinder",
+      "mid": "prism",
+      "right": "cone"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "square",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "cone",
+      "mid": "cube",
+      "right": "cone"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "square",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "cone",
+      "mid": "cylinder",
+      "right": "prism"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "square",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "cone",
+      "mid": "cylinder",
+      "right": "prism"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "square",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "cone",
+      "mid": "cube",
+      "right": "cone"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "square",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "cone",
+      "mid": "cylinder",
+      "right": "prism"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "square",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "cone",
+      "mid": "cylinder",
+      "right": "prism"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "square",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "sphere",
+      "mid": "cube",
+      "right": "pyramid"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "square",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "sphere",
+      "mid": "cube",
+      "right": "pyramid"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "square",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "sphere",
+      "mid": "prism",
+      "right": "prism"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "square",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "sphere",
+      "mid": "cube",
+      "right": "pyramid"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "square",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "sphere",
+      "mid": "cube",
+      "right": "pyramid"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "square",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "sphere",
+      "mid": "prism",
+      "right": "prism"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "square",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "cylinder",
+      "mid": "cylinder",
+      "right": "pyramid"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "square",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "cylinder",
+      "mid": "cylinder",
+      "right": "pyramid"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "square",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "cylinder",
+      "mid": "prism",
+      "right": "cone"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "square",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "cylinder",
+      "mid": "prism",
+      "right": "cone"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "square",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "cylinder",
+      "mid": "prism",
+      "right": "cone"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "square",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "cylinder",
+      "mid": "prism",
+      "right": "cone"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "square",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "cone",
+      "mid": "cube",
+      "right": "cone"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "square",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "cone",
+      "mid": "cylinder",
+      "right": "prism"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "square",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "cone",
+      "mid": "cylinder",
+      "right": "prism"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "square",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "cone",
+      "mid": "cube",
+      "right": "cone"
+    }
+  },
+  {
+    "inside": {
+      "left": "circle",
+      "mid": "square",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "cone",
+      "mid": "cylinder",
+      "right": "prism"
     }
   },
   {
@@ -162,9 +1746,405 @@
       "right": "circle"
     },
     "outside": {
+      "left": "cube",
+      "mid": "pyramid",
+      "right": "sphere"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "triangle",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "cube",
+      "mid": "cone",
+      "right": "cone"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "triangle",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "cube",
+      "mid": "pyramid",
+      "right": "sphere"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "triangle",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "cube",
+      "mid": "pyramid",
+      "right": "sphere"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "triangle",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "cube",
+      "mid": "cone",
+      "right": "cone"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "triangle",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "cylinder",
+      "mid": "pyramid",
+      "right": "cylinder"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "triangle",
+      "right": "circle"
+    },
+    "outside": {
       "left": "cylinder",
       "mid": "prism",
       "right": "cone"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "triangle",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "cylinder",
+      "mid": "prism",
+      "right": "cone"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "triangle",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "cylinder",
+      "mid": "pyramid",
+      "right": "cylinder"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "triangle",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "cylinder",
+      "mid": "prism",
+      "right": "cone"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "triangle",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "cylinder",
+      "mid": "prism",
+      "right": "cone"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "triangle",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "prism",
+      "mid": "cone",
+      "right": "cylinder"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "triangle",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "prism",
+      "mid": "cone",
+      "right": "cylinder"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "triangle",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "prism",
+      "mid": "cone",
+      "right": "cylinder"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "triangle",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "prism",
+      "mid": "cone",
+      "right": "cylinder"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "triangle",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "prism",
+      "mid": "prism",
+      "right": "sphere"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "triangle",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "prism",
+      "mid": "prism",
+      "right": "sphere"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "triangle",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "cube",
+      "mid": "pyramid",
+      "right": "sphere"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "triangle",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "cube",
+      "mid": "pyramid",
+      "right": "sphere"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "triangle",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "cube",
+      "mid": "cone",
+      "right": "cone"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "triangle",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "cube",
+      "mid": "pyramid",
+      "right": "sphere"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "triangle",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "cube",
+      "mid": "pyramid",
+      "right": "sphere"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "triangle",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "cube",
+      "mid": "cone",
+      "right": "cone"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "triangle",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "cylinder",
+      "mid": "pyramid",
+      "right": "cylinder"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "triangle",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "cylinder",
+      "mid": "prism",
+      "right": "cone"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "triangle",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "cylinder",
+      "mid": "prism",
+      "right": "cone"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "triangle",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "cylinder",
+      "mid": "pyramid",
+      "right": "cylinder"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "triangle",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "cylinder",
+      "mid": "prism",
+      "right": "cone"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "triangle",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "cylinder",
+      "mid": "prism",
+      "right": "cone"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "triangle",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "prism",
+      "mid": "cone",
+      "right": "cylinder"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "triangle",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "prism",
+      "mid": "cone",
+      "right": "cylinder"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "triangle",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "prism",
+      "mid": "prism",
+      "right": "sphere"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "triangle",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "prism",
+      "mid": "prism",
+      "right": "sphere"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "triangle",
+      "right": "circle"
+    },
+    "outside": {
+      "left": "prism",
+      "mid": "cone",
+      "right": "cylinder"
     }
   },
   {
@@ -198,9 +2178,405 @@
       "right": "triangle"
     },
     "outside": {
+      "left": "cube",
+      "mid": "sphere",
+      "right": "pyramid"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "circle",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "cube",
+      "mid": "cone",
+      "right": "cone"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "circle",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "cube",
+      "mid": "sphere",
+      "right": "pyramid"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "circle",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "cube",
+      "mid": "sphere",
+      "right": "pyramid"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "circle",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "cube",
+      "mid": "cone",
+      "right": "cone"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "circle",
+      "right": "triangle"
+    },
+    "outside": {
       "left": "cylinder",
       "mid": "cone",
       "right": "prism"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "circle",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "cylinder",
+      "mid": "cone",
+      "right": "prism"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "circle",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "cylinder",
+      "mid": "cylinder",
+      "right": "pyramid"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "circle",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "cylinder",
+      "mid": "cylinder",
+      "right": "pyramid"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "circle",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "cylinder",
+      "mid": "cone",
+      "right": "prism"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "circle",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "cylinder",
+      "mid": "cone",
+      "right": "prism"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "circle",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "prism",
+      "mid": "sphere",
+      "right": "prism"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "circle",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "prism",
+      "mid": "cylinder",
+      "right": "cone"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "circle",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "prism",
+      "mid": "cylinder",
+      "right": "cone"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "circle",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "prism",
+      "mid": "sphere",
+      "right": "prism"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "circle",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "prism",
+      "mid": "cylinder",
+      "right": "cone"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "circle",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "prism",
+      "mid": "cylinder",
+      "right": "cone"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "circle",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "cube",
+      "mid": "sphere",
+      "right": "pyramid"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "circle",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "cube",
+      "mid": "sphere",
+      "right": "pyramid"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "circle",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "cube",
+      "mid": "cone",
+      "right": "cone"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "circle",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "cube",
+      "mid": "sphere",
+      "right": "pyramid"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "circle",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "cube",
+      "mid": "sphere",
+      "right": "pyramid"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "circle",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "cube",
+      "mid": "cone",
+      "right": "cone"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "circle",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "cylinder",
+      "mid": "cylinder",
+      "right": "pyramid"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "circle",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "cylinder",
+      "mid": "cylinder",
+      "right": "pyramid"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "circle",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "cylinder",
+      "mid": "cone",
+      "right": "prism"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "circle",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "cylinder",
+      "mid": "cone",
+      "right": "prism"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "circle",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "cylinder",
+      "mid": "cone",
+      "right": "prism"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "circle",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "cylinder",
+      "mid": "cone",
+      "right": "prism"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "circle",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "prism",
+      "mid": "sphere",
+      "right": "prism"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "circle",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "prism",
+      "mid": "cylinder",
+      "right": "cone"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "circle",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "prism",
+      "mid": "cylinder",
+      "right": "cone"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "circle",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "prism",
+      "mid": "sphere",
+      "right": "prism"
+    }
+  },
+  {
+    "inside": {
+      "left": "square",
+      "mid": "circle",
+      "right": "triangle"
+    },
+    "outside": {
+      "left": "prism",
+      "mid": "cylinder",
+      "right": "cone"
     }
   },
   {
