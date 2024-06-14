@@ -22,6 +22,7 @@
     export let width = 64;
     export let height = 64;
     export let padding = true;
+    export let image = true;
 
     export let draggable: boolean = true;
 
@@ -35,12 +36,26 @@
     }
 </script>
 
+{#if image} 
 <div draggable={draggable} on:dragstart={dragStart} role="none" class:border={border} class:padding={padding}>
     <img {width} {height} src={get2DURL(shape)} alt="" draggable="false" />
 </div>
+{:else}
+<div draggable={draggable} on:dragstart={dragStart} role="none" class:border={border} class:padding={padding}>
+    <div style:width={width + "px"} style:height={height + "px"} class="text">
+        {shape.charAt(0).toUpperCase()}
+    </div>
+</div>
+{/if}
 
 <style>
-    div {
+    .text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+    }
+    div:not(.text) {
         display: flex;
         flex-direction: column;
         align-items: center;
