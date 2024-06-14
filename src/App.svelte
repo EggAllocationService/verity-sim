@@ -46,6 +46,7 @@
   let is_complete: boolean = false;
   let start_time: number = Date.now();
   let show_hints = false;
+  let use_image_callouts = true;
 
   function randomize() {
     var i = Math.floor(Math.random() * puzzles.length);
@@ -132,14 +133,20 @@
 <main>
   <div class="callouts">
     <h2>Inside Callouts</h2>
-    <span>
-      <label for="hints">Show hints: </label>
-      <input type="checkbox" bind:checked={show_hints} id="hints" />
-    </span>
-    <div class="callouts-symbols">
-      <Shape2D border={false} draggable={false} shape={calls.left} />
-      <Shape2D border={false} draggable={false} shape={calls.mid} />
-      <Shape2D border={false} draggable={false} shape={calls.right} />
+    <div style="display: flex; flex-direction: column">
+      <span>
+        <label for="hints">Show hints: </label>
+        <input type="checkbox" bind:checked={show_hints} id="hints" />
+      </span>
+      <span>
+        <label for="img_calls">Image Callouts: </label>
+        <input type="checkbox" bind:checked={use_image_callouts} id="img_calls" />
+      </span>
+    </div>
+    <div class="callouts-symbols" class:compact={!use_image_callouts}>
+      <Shape2D border={false} draggable={false} image={use_image_callouts} padding={use_image_callouts} shape={calls.mid} />
+      <Shape2D border={false} draggable={false} image={use_image_callouts} padding={use_image_callouts} shape={calls.left} />
+      <Shape2D border={false} draggable={false} image={use_image_callouts} padding={use_image_callouts} shape={calls.right} />
     </div>
   </div>
   <div class="state">
@@ -202,6 +209,10 @@
 {/if}
 
 <style>
+  .compact {
+    justify-content: center !important;
+    gap: 0px !important;
+  }
   #credit {
     position: fixed;
     bottom: 1em;
