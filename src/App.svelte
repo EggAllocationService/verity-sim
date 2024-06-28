@@ -9,6 +9,7 @@
   } from "./lib/shapes";
   import { remove_one_item_from_array } from "./lib/util";
   import puzzleJson from "./assets/puzzles.json"
+    import DismissablePopup from "./lib/DismissablePopup.svelte";
 
   type Puzzle = {
       inside: {
@@ -190,7 +191,7 @@
   </div>
 </div>
 <div id ="credit">
-  @EggAllocationService with ❤️
+  <span>@EggAllocationService with ❤️</span>
 </div>
 
 {#if is_complete}
@@ -207,8 +208,19 @@
     </div>
   </div>
 {/if}
+<div id="popup">
+  <DismissablePopup href="https://buymeacoffee.com/eggallocationservice">
+    ☕️ Buy me a coffee!
+  </DismissablePopup>
+</div>
 
 <style>
+  #popup {
+    z-index: 50;
+    position: fixed;
+    top: 1em;
+    right: 1em;
+  }
   .compact {
     justify-content: center !important;
     gap: 0px !important;
@@ -217,11 +229,26 @@
     position: fixed;
     bottom: 1em;
     right: 1em;
-    padding: 1em;
+    
     font-size: 1.5em;
-    background:rgb(24, 24, 24);
-    border-radius: 100vh;
+    display: flex;
+    flex-direction: column;
     font-size: 11px;
+    align-items: flex-end;
+    gap: 0.5em;
+  }
+  #credit > * {
+    background:rgb(24, 24, 24);
+    padding: 1em;
+    color: white;
+    text-align: left;
+    border-radius: 100vh;
+    display: inline-block;
+    width:fit-content;
+  }
+  #credit > a:hover {
+    background: rgb(18, 18, 18);
+    cursor: pointer;
   }
   #hints {
     text-align: center;
@@ -231,6 +258,7 @@
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 100;
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
