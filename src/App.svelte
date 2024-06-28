@@ -246,10 +246,7 @@
     display: inline-block;
     width:fit-content;
   }
-  #credit > a:hover {
-    background: rgb(18, 18, 18);
-    cursor: pointer;
-  }
+  
   #hints {
     text-align: center;
     transform: translateY(-20%) scale(1.25);
