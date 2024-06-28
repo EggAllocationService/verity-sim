@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { blur, fade } from "svelte/transition";
   export let href: string = "#"
   export let key: string = "coffee"
   import closeUrl from "../assets/close.svg"
@@ -15,7 +16,7 @@
 </script>
 
 {#if should_display} 
-<div class="container">
+<div class="container" out:blur={{amount: 10, duration: 200}}>
   <a href={href} class="dismissable-popup" target="_blank">
     <slot></slot>
   </a>
