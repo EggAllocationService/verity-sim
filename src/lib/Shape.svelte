@@ -4,7 +4,7 @@
     import cubeUrl from "../assets/cube.svg";
     import cylinderUrl from "../assets/cylinder.svg";
     import coneUrl from "../assets/cone.svg";
-    import pyramidUrl from "../assets/pyramid.svg";
+    import pyramidUrl from "../assets/tetrahedron.svg";
     import prismUrl from "../assets/prism.svg";
     import { createEventDispatcher } from "svelte";
     import Shape2D from "./Shape2D.svelte";
