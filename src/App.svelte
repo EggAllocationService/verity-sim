@@ -218,8 +218,9 @@
   #popup {
     z-index: 50;
     position: fixed;
-    top: 1em;
+    top: 2em;
     right: 1em;
+    font-size: 12px;
   }
   .compact {
     justify-content: center !important;
