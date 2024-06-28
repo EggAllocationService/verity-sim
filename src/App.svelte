@@ -250,14 +250,12 @@
   }
 
   .toolbox {
-    position: sticky;
-    bottom: 0;
-    left: 50%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     gap: 1em;
     padding: 0.4em;
+    margin-top: 2em;
   }
   .toolbox-symbols {
     display: flex;
@@ -306,6 +304,5 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    height: 100vh;
   }
 </style>
