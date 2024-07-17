@@ -76,6 +76,13 @@
   }
 
   function isComplete(state: PuzzleState, calls: Callouts): boolean {
+    if (challenge_mode) {
+      return (
+        state.left == challenge_things.left &&
+        state.mid == challenge_things.mid &&
+        state.right == challenge_things.right
+      );
+    }
     // check that for each slot, the 2d shape plus the decomposed 3d shape is all three 2d shapes
     let left = decompose_shape(state.left);
     let mid = decompose_shape(state.mid);
