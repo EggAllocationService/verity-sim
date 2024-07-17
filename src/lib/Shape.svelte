@@ -14,7 +14,7 @@
     export let shape: SHAPE = SHAPE.SPHERE;
     export let selected: boolean = false;
     export let hints: boolean = false;
-    export let compact: boolean = true;
+    export let compact: boolean = false;
 
     let droppable: boolean = false;
 
