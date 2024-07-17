@@ -10,6 +10,7 @@
   import { remove_one_item_from_array } from "./lib/util";
   import puzzleJson from "./assets/puzzles.json"
     import DismissablePopup from "./lib/DismissablePopup.svelte";
+    import Tooltip from "./lib/Tooltip.svelte";
 
   type Puzzle = {
       inside: {
@@ -144,6 +145,7 @@
     is_complete = false;
     start_time = Date.now();
   }
+  import helpurl from "./assets/question.svg";
 </script>
 
 <main>
@@ -159,7 +161,8 @@
         <input type="checkbox" bind:checked={use_image_callouts} id="img_calls" />
       </span>
       <span>
-        <label for="challenge_mode">Challenge Mode: </label>
+        <label for="challenge_mode">Challenge Mode <Tooltip text={"For verity's challenge. Takes each statue's shape, makes it 3D, and rotates it one to the right. Check \"Show Hints\" to see the correct solution."}>
+          <img src={helpurl} alt="question mark" width={16} height={16} style="filter: invert(1.0); opacity: 0.5;" /></Tooltip>: </label>
         <input type="checkbox" bind:checked={challenge_mode} id="challenge_mode" />
       </span>
     </div>
