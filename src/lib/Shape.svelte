@@ -14,6 +14,7 @@
     export let shape: SHAPE = SHAPE.SPHERE;
     export let selected: boolean = false;
     export let hints: boolean = false;
+    export let compact: boolean = true;
 
     let droppable: boolean = false;
 
@@ -54,16 +55,18 @@
 
 </script>
 
-<div on:drop={drop} on:dragover={dragover} on:dragleave={() => droppable = false} role="none" class:drop={droppable} class:selected={selected}>
+<div on:drop={drop} on:dragover={dragover} on:dragleave={() => droppable = false} role="none" class:drop={droppable} class:selected={selected} class:compact={compact}>
     <img width=64 height=64 src={getShapeImageURL(shape)} alt="" />
-    <p>{shape}</p>
+    {#if !compact}
+        <p>{shape}</p>
+    {/if}
     {#if hints}
-    <div class="hints">
-        <Shape2D shape={decompose_shape(shape)[0]} draggable={false} border={false} width={28} height={28} padding={false} />
-        <span>+</span>
-        <Shape2D shape={decompose_shape(shape)[1]} draggable={false} border={false} width={28} height={28} padding={false} />
-    </div>
-{/if}
+        <div class="hints">
+            <Shape2D shape={decompose_shape(shape)[0]} draggable={false} border={false} width={28} height={28} padding={false} />
+            <span>+</span>
+            <Shape2D shape={decompose_shape(shape)[1]} draggable={false} border={false} width={28} height={28} padding={false} />
+        </div>
+    {/if}
 </div>
 
 <style>
@@ -86,6 +89,9 @@
         border: 1px solid black;
         border-radius: 0.5rem;
         margin: 0.5rem;
+    }
+    .compact {
+        border: none !important;
     }
 
     .selected {

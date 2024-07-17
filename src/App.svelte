@@ -48,6 +48,17 @@
   let start_time: number = Date.now();
   let show_hints = false;
   let use_image_callouts = true;
+  let challenge_mode = false;
+  let challenge_things: {left: SHAPE, mid: SHAPE, right: SHAPE} = {
+    left: SHAPE.SPHERE,
+    mid: SHAPE.CUBE,
+    right: SHAPE.CYLINDER
+  }
+  $: {
+    challenge_things.left = construct_shape_from_2d(calls.right, calls.right);
+    challenge_things.mid = construct_shape_from_2d(calls.left, calls.left);
+    challenge_things.right = construct_shape_from_2d(calls.mid, calls.mid);
+  }
 
   function randomize() {
     var i = Math.floor(Math.random() * puzzles.length);
@@ -143,12 +154,23 @@
         <label for="img_calls">Image Callouts: </label>
         <input type="checkbox" bind:checked={use_image_callouts} id="img_calls" />
       </span>
+      <span>
+        <label for="challenge_mode">Challenge Mode: </label>
+        <input type="checkbox" bind:checked={challenge_mode} id="challenge_mode" />
+      </span>
     </div>
     <div class="callouts-symbols" class:compact={!use_image_callouts}>
       <Shape2D border={false} draggable={false} image={use_image_callouts} padding={use_image_callouts} shape={calls.left} />
       <Shape2D border={false} draggable={false} image={use_image_callouts} padding={use_image_callouts} shape={calls.mid} />
       <Shape2D border={false} draggable={false} image={use_image_callouts} padding={use_image_callouts} shape={calls.right} />
     </div>
+    {#if challenge_mode}
+      <div class="callouts-symbols">
+        <Shape compact={true} shape={challenge_things.left} />
+        <Shape compact={true} shape={challenge_things.mid} />
+        <Shape compact={true} shape={challenge_things.right} />
+      </div>
+    {/if}
   </div>
   <div class="state">
     <h2>Statue Objects</h2>
