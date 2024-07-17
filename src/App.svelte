@@ -73,9 +73,6 @@
       right: puzzles[i].outside.right,
       selected: null,
     };
-    if (isComplete(state, calls)) {
-      randomize();
-    }
   }
 
   function isComplete(state: PuzzleState, calls: Callouts): boolean {
