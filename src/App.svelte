@@ -73,6 +73,9 @@
       right: puzzles[i].outside.right,
       selected: null,
     };
+    if (isComplete(state, calls)) {
+      randomize();
+    }
   }
 
   function isComplete(state: PuzzleState, calls: Callouts): boolean {
@@ -129,14 +132,11 @@
         );
         newState[slot] = construct_shape_from_2d(sB[0], sB[1]);
         newState.selected = null;
-        console.log("New state", newState);
         num_swaps++;
       }
       setTimeout(() => {
         state = newState;
-        console.log("State updated");
         is_complete = isComplete(state, calls);
-        console.log("Is complete", is_complete);
       }, 10);
     };
   }
