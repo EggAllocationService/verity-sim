@@ -105,6 +105,17 @@
         return;
       }
       if (newState.selected?.slot == slot) return; // selecting same slot dont work
+      if (slot == SelectedSlot.LEFT) {
+        disabled.left = true;
+      } else if (slot == SelectedSlot.MID) {
+        disabled.mid = true;
+      } else {
+        disabled.right = true;
+      }
+      if (disabled.left && disabled.mid && disabled.right) {
+        disabled = {left: false, mid: false, right: false};
+      }
+      
       if (newState.selected == null) {
         // select this slot
         newState.selected = { slot, shape };
@@ -138,12 +149,14 @@
       }, 10);
     };
   }
+  let disabled: {left: boolean, mid: boolean, right: boolean} = {left: false, mid: false, right: false};
 
   function reset() {
     randomize();
     num_swaps = 0;
     is_complete = false;
     start_time = Date.now();
+    disabled = {left: false, mid: false, right: false};
   }
   import helpurl from "./assets/question.svg";
 </script>
@@ -208,14 +221,17 @@
     <Shape2D
       shape={SHAPE2D.CIRCLE}
       on:shapedropped={onDropped(SelectedSlot.LEFT)}
+      disabled={disabled.left}
     />
     <Shape2D
       shape={SHAPE2D.SQUARE}
       on:shapedropped={onDropped(SelectedSlot.MID)}
+      disabled={disabled.mid}
     />
     <Shape2D
       shape={SHAPE2D.TRIANGLE}
       on:shapedropped={onDropped(SelectedSlot.RIGHT)}
+      disabled={disabled.right}
     />
   </div>
 </div>

@@ -23,11 +23,12 @@
     export let height = 64;
     export let padding = true;
     export let image = true;
+    export let disabled = false;
 
     export let draggable: boolean = true;
 
     function dragStart(ev: DragEvent) {
-        if (!draggable) return;
+        if (!draggable || disabled) return;
         if (ev.dataTransfer == null) return;
         ev.dataTransfer!.clearData();
         ev.dataTransfer!.setData("text", shape);
@@ -37,7 +38,7 @@
 </script>
 
 {#if image} 
-<div draggable={draggable} on:dragstart={dragStart} role="none" class:border={border} class:padding={padding}>
+<div draggable={draggable && !disabled} on:dragstart={dragStart} role="none" class:border={border} class:padding={padding} class:disabled={disabled}>
     <img {width} {height} src={get2DURL(shape)} alt="" draggable="false" />
 </div>
 {:else}
@@ -49,6 +50,10 @@
 {/if}
 
 <style>
+    .disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
     .text {
         display: flex;
         align-items: center;
