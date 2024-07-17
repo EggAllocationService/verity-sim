@@ -171,7 +171,7 @@
       <Shape2D border={false} draggable={false} image={use_image_callouts} padding={use_image_callouts} shape={calls.mid} />
       <Shape2D border={false} draggable={false} image={use_image_callouts} padding={use_image_callouts} shape={calls.right} />
     </div>
-    {#if challenge_mode}
+    {#if challenge_mode && show_hints}
       <div class="callouts-symbols">
         <Shape compact={true} shape={challenge_things.left} />
         <Shape compact={true} shape={challenge_things.mid} />
