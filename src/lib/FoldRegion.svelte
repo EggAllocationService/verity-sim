@@ -1,4 +1,6 @@
 <script lang="ts">
+    import { onMount } from "svelte";
+
   export let expanded: boolean = false;
   export let title: string = "Thing";
   export let speed: number = 300;
@@ -45,11 +47,6 @@
   let icon: HTMLElement;
   let content: HTMLElement;
   let region: HTMLElement;
-  $: {
-    if (content) {
-      region.style.height = `${btn?.clientHeight}px`;
-    }
-  }
 </script>
 
 <div class="fold-region" class:expanded bind:this={region}>
@@ -80,7 +77,7 @@
   .fold-region {
     overflow: hidden;
     border-radius: 12px;
-    height: 2em;
+    height: 44px;
     background-color: rgba(16, 16, 16, 0.196);
     color: white;
   }
