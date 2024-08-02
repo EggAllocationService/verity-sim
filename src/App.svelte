@@ -173,7 +173,7 @@
 <main>
   <div class="callouts">
     <h2>Inside Callouts</h2>
-    <FoldRegion title="Settings">
+    <FoldRegion title="Settings" speed={150}>
       <div style="display: flex; flex-direction: column">
         <span>
           <label for="hints">Show hints: </label>
