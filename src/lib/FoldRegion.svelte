@@ -1,0 +1,80 @@
+<script lang="ts">
+  export let expanded: boolean = false;
+  export let title: string = "Thing";
+  export let speed: number = 300;
+
+  function toggle() {
+    expanded = !expanded;
+    if (expanded) {
+      icon.animate([
+        { transform: "rotateZ(90deg)" },
+        { transform: "rotateZ(0deg)" }
+      ], { duration: speed, fill: "forwards" });
+    } else {
+      icon.animate([
+        { transform: "rotateZ(0deg)" },
+        { transform: "rotateZ(90deg)" }
+      ], { duration: speed, fill: "forwards" });
+    }
+
+    // calculate height of the content
+    let height = content.clientHeight;
+    // animate region
+    if (expanded) {
+      region.animate([
+      { height: `${btn.clientHeight}px` },
+      { height: `${btn.clientHeight + height + 12}px` }
+    ], { duration: speed, fill: "forwards" });
+    } else {
+      region.animate([
+       { height: `${btn.clientHeight + height + 12}px` },
+       { height: `${btn.clientHeight}px` }
+    ], { duration: speed, fill: "forwards" });
+    }
+  }
+  let btn: HTMLElement;
+  let icon: HTMLElement;
+  let content: HTMLElement;
+  let region: HTMLElement;
+  $: {
+    if (content) {
+      region.style.height = `${btn?.clientHeight}px`;
+    }
+  }
+
+
+</script>
+
+<div class="fold-region" class:expanded={expanded} bind:this={region}>
+  <button class="header" on:click={toggle} bind:this={btn}>
+    <span>{title}</span>
+    <span class="icon" bind:this={icon}>▼</span>
+  </button>
+  <div class="fold-region-content" bind:this={content}>
+    <slot></slot>
+  </div>
+</div>
+
+<style>
+  button {
+    width: 100%;
+    padding: 0.5em;
+    background: transparent !important;
+    color: white;
+    border: none;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+  }
+  .icon {
+    transform: rotateZ(90deg);
+  }
+
+  .fold-region {
+    overflow: hidden;
+    border-radius: 12px;
+    height: 2em;
+    background-color: rgba(16, 16, 16, 0.196);
+    color: white;
+  }
+</style>
