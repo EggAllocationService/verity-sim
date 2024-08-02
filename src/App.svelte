@@ -49,11 +49,17 @@
   let start_time: number = Date.now();
   let show_hints = false;
   let use_image_callouts = true;
+  let use_realistic_drops = false;
   let challenge_mode = false;
   let challenge_things: {left: SHAPE, mid: SHAPE, right: SHAPE} = {
     left: SHAPE.SPHERE,
     mid: SHAPE.CUBE,
     right: SHAPE.CYLINDER
+  }
+  $: {
+    if (!use_realistic_drops) {
+      disabled = {left: false, mid: false, right: false};
+    }
   }
   $: {
     challenge_things.left = construct_shape_from_2d(calls.right, calls.right);
@@ -105,15 +111,17 @@
         return;
       }
       if (newState.selected?.slot == slot) return; // selecting same slot dont work
-      if (slot == SelectedSlot.LEFT) {
-        disabled.left = true;
-      } else if (slot == SelectedSlot.MID) {
-        disabled.mid = true;
-      } else {
-        disabled.right = true;
-      }
-      if (disabled.left && disabled.mid && disabled.right) {
-        disabled = {left: false, mid: false, right: false};
+      if (use_realistic_drops) {
+        if (slot == SelectedSlot.LEFT) {
+          disabled.left = true;
+        } else if (slot == SelectedSlot.MID) {
+          disabled.mid = true;
+        } else {
+          disabled.right = true;
+        }
+        if (disabled.left && disabled.mid && disabled.right) {
+          disabled = {left: false, mid: false, right: false};
+        }
       }
       
       if (newState.selected == null) {
@@ -159,26 +167,33 @@
     disabled = {left: false, mid: false, right: false};
   }
   import helpurl from "./assets/question.svg";
+    import FoldRegion from "./lib/FoldRegion.svelte";
 </script>
 
 <main>
   <div class="callouts">
     <h2>Inside Callouts</h2>
-    <div style="display: flex; flex-direction: column">
-      <span>
-        <label for="hints">Show hints: </label>
-        <input type="checkbox" bind:checked={show_hints} id="hints" />
-      </span>
-      <span>
-        <label for="img_calls">Image Callouts: </label>
-        <input type="checkbox" bind:checked={use_image_callouts} id="img_calls" />
-      </span>
-      <span>
-        <label for="challenge_mode">Challenge Mode <Tooltip text={"For verity's challenge. Takes each statue's shape, makes it 3D, and rotates it one to the right. Check \"Show Hints\" to see the correct solution."}>
-          <img src={helpurl} alt="question mark" width={16} height={16} style="filter: invert(1.0); opacity: 0.5;" /></Tooltip>: </label>
-        <input type="checkbox" bind:checked={challenge_mode} id="challenge_mode" />
-      </span>
-    </div>
+    <FoldRegion title="Settings">
+      <div style="display: flex; flex-direction: column">
+        <span>
+          <label for="hints">Show hints: </label>
+          <input type="checkbox" bind:checked={show_hints} id="hints" />
+        </span>
+        <span>
+          <label for="img_calls">Image Callouts: </label>
+          <input type="checkbox" bind:checked={use_image_callouts} id="img_calls" />
+        </span>
+        <span>
+          <label for="challenge_mode">Challenge Mode <Tooltip text={"For verity's challenge. Takes each statue's shape, makes it 3D, and rotates it one to the right. Check \"Show Hints\" to see the correct solution."}>
+            <img src={helpurl} alt="question mark" width={16} height={16} style="filter: invert(1.0); opacity: 0.5;" /></Tooltip>: </label>
+          <input type="checkbox" bind:checked={challenge_mode} id="challenge_mode" />
+        </span>
+        <span>
+          <label for="real_drops">Realistic Symbol Drops: </label>
+          <input type="checkbox" bind:checked={use_realistic_drops} id="real_drops" />
+        </span>
+      </div>
+    </FoldRegion>
     <div class="callouts-symbols" class:compact={!use_image_callouts}>
       <Shape2D border={false} draggable={false} image={use_image_callouts} padding={use_image_callouts} shape={calls.left} />
       <Shape2D border={false} draggable={false} image={use_image_callouts} padding={use_image_callouts} shape={calls.mid} />
