@@ -168,6 +168,7 @@
   }
   import helpurl from "./assets/question.svg";
     import FoldRegion from "./lib/FoldRegion.svelte";
+    import ghLogo from "./assets/github-mark.svg"
 </script>
 
 <main>
@@ -251,6 +252,7 @@
   </div>
 </div>
 <div id ="credit">
+  <a href="https://github.com/EggAllocationService/verity-sim" style:height={"32px"}><img alt="github logo" src={ghLogo} width=32 height=32 style:filter={"invert(1)"} /></a>
   <span>@EggAllocationService with ❤️</span>
 </div>
 
