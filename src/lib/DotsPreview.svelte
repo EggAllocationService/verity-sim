@@ -25,5 +25,6 @@
 
   .dot.active {
     background: rgb(63, 63, 230);
+    box-shadow: 0 0 5px rgb(63, 63, 230);
   }
 </style>
