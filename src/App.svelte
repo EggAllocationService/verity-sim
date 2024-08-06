@@ -273,6 +273,19 @@
           1000
         ).toFixed(2)} seconds!
       </p>
+      <h2>
+        Your Solution:
+      </h2>
+      <span class="row">
+        <Shape2D padding={false} shape={calls.left} width={40} height={40} draggable={false} border={false}  />
+        <Shape2D padding={false} shape={calls.mid} width={40} height={40} draggable={false} border={false}  />
+        <Shape2D padding={false} shape={calls.right} width={40} height={40} draggable={false} border={false}  />
+      </span>
+      <span class="row">
+        <Shape width={40} height={40} shape={state.left} compact={true} />
+        <Shape width={40} height={40} shape={state.mid} compact={true} />
+        <Shape width={40} height={40} shape={state.right} compact={true} />
+      </span>
       <button on:click={reset}>Reset</button>
     </div>
   </div>
@@ -284,6 +297,13 @@
 </div>
 
 <style>
+  .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 16px;
+    margin: 8px;
+  }
   #popup {
     z-index: 50;
     position: fixed;

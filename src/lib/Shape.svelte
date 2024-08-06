@@ -15,6 +15,8 @@
     export let selected: boolean = false;
     export let hints: boolean = false;
     export let compact: boolean = false;
+    export let width: number = 64;
+    export let height: number = 64;
 
     let droppable: boolean = false;
 
@@ -56,7 +58,7 @@
 </script>
 
 <div on:drop={drop} on:dragover={dragover} on:dragleave={() => droppable = false} role="none" class:drop={droppable} class:selected={selected} class:compact={compact}>
-    <img width=64 height=64 src={getShapeImageURL(shape)} alt="" />
+    <img {width} {height} src={getShapeImageURL(shape)} alt="" />
     {#if !compact}
         <p>{shape}</p>
     {/if}
@@ -92,6 +94,7 @@
     }
     .compact {
         border: none !important;
+        padding: 0px !important;
     }
 
     .selected {
