@@ -181,7 +181,7 @@
 <main>
   <div class="callouts">
     <h2>Inside Callouts</h2>
-    <FoldRegion title="Settings" speed={150}>
+    <FoldRegion title="Settings" speed={150} dots={[show_hints, use_image_callouts, challenge_mode, use_realistic_drops]}>
       <div style="display: flex; flex-direction: column">
         <span>
           <label for="hints">Show hints: </label>

@@ -1,9 +1,12 @@
 <script lang="ts">
     import { onMount } from "svelte";
+    import DotsPreview from "./DotsPreview.svelte";
+    import { blur } from "svelte/transition";
 
   export let expanded: boolean = false;
   export let title: string = "Thing";
   export let speed: number = 300;
+  export let dots: boolean[] | null = null;
 
   function toggle() {
     expanded = !expanded;
@@ -52,7 +55,12 @@
 <div class="fold-region" class:expanded bind:this={region}>
   <button class="header" on:click={toggle} bind:this={btn}>
     <span>{title}</span>
-    <span class="icon" bind:this={icon}>▼</span>
+    <span class="group">
+      {#if dots != null && !expanded}
+        <DotsPreview {dots} size={4}  />
+      {/if}
+      <span class="icon" bind:this={icon}>▼</span>
+    </span>
   </button>
   <div class="fold-region-content" bind:this={content}>
     <slot></slot>
@@ -60,6 +68,13 @@
 </div>
 
 <style>
+  .group {
+    display: inline-flex;
+    padding: 0px;
+    margin: 0px;
+    gap: 1em;
+    align-items: center;
+  }
   button {
     width: 100%;
     padding: 0.8em;
