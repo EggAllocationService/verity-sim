@@ -47,10 +47,17 @@
   let num_swaps: number = 0;
   let is_complete: boolean = false;
   let start_time: number = Date.now();
-  let show_hints = false;
-  let use_image_callouts = true;
-  let use_realistic_drops = false;
-  let challenge_mode = false;
+  let show_hints = window.localStorage.getItem("show_hints") === "true";
+  let use_image_callouts = (window.localStorage.getItem("use_image_callouts") === "true") || true;
+  let use_realistic_drops = window.localStorage.getItem("use_realistic_drops") === "true";
+  let challenge_mode = window.localStorage.getItem("challenge_mode") === "true";
+  $: {
+    window.localStorage.setItem("show_hints", show_hints.toString());
+    window.localStorage.setItem("use_image_callouts", use_image_callouts.toString());
+    window.localStorage.setItem("use_realistic_drops", use_realistic_drops.toString());
+    window.localStorage.setItem("challenge_mode", challenge_mode.toString());
+
+  }
   let challenge_things: {left: SHAPE, mid: SHAPE, right: SHAPE} = {
     left: SHAPE.SPHERE,
     mid: SHAPE.CUBE,
