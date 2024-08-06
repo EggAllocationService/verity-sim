@@ -240,12 +240,12 @@
       disabled={disabled.left}
     />
     <Shape2D
-      shape={SHAPE2D.SQUARE}
+      shape={SHAPE2D.TRIANGLE}
       on:shapedropped={onDropped(SelectedSlot.MID)}
       disabled={disabled.mid}
     />
     <Shape2D
-      shape={SHAPE2D.TRIANGLE}
+      shape={SHAPE2D.SQUARE}
       on:shapedropped={onDropped(SelectedSlot.RIGHT)}
       disabled={disabled.right}
     />
