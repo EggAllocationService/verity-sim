@@ -112,9 +112,9 @@
       }
       if (newState.selected?.slot == slot) return; // selecting same slot dont work
       if (use_realistic_drops) {
-        if (slot == SelectedSlot.LEFT) {
+        if (event.detail == SHAPE2D.CIRCLE) {
           disabled.left = true;
-        } else if (slot == SelectedSlot.MID) {
+        } else if (event.detail == SHAPE2D.TRIANGLE) {
           disabled.mid = true;
         } else {
           disabled.right = true;
