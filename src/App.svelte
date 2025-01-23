@@ -358,7 +358,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #333;
+    background-color: var(--bg);
     padding: 1em;
     border: 1px solid black;
     border-radius: 0.5em;
