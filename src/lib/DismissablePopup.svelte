@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { blur, fade } from "svelte/transition";
+    import { blur } from "svelte/transition";
   export let href: string = "#"
   export let key: string;
   import closeUrl from "../assets/close.svg"
@@ -53,11 +53,8 @@
     border: none;
     cursor: pointer;
     margin-left: .5em;
-    border-radius: 0px;
-    padding-right: 1em;
-    padding-left: .5em;
-    padding-top: 100%;
-    padding-bottom: 100%;
+    border-radius: 0;
+    padding: 100% 1em 100% .5em;
     height: 100%;
   }
   button:hover {
