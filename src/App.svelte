@@ -291,7 +291,7 @@
   </div>
 {/if}
 <div id="popup">
-  <DismissablePopup href="https://buymeacoffee.com/eggallocationservice">
+  <DismissablePopup href="https://buymeacoffee.com/eggallocationservice" key="coffee">
     ☕️ Buy me a coffee!
   </DismissablePopup>
 </div>

@@ -1,7 +1,7 @@
 <script lang="ts">
     import { blur, fade } from "svelte/transition";
   export let href: string = "#"
-  export let key: string = "coffee"
+  export let key: string;
   import closeUrl from "../assets/close.svg"
   
   let should_display = true;
