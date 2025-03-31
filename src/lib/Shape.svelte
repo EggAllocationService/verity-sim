@@ -12,6 +12,7 @@
     const dispatcher = createEventDispatcher<{shapedropped: SHAPE2D}>();
 
     export let shape: SHAPE = SHAPE.SPHERE;
+    export let callout: SHAPE2D = SHAPE2D.CIRCLE;
     export let selected: boolean = false;
     export let hints: boolean = false;
     export let compact: boolean = false;
@@ -24,11 +25,7 @@
         ev.preventDefault();
         if (ev.dataTransfer == null || ev.dataTransfer.getData("text") == "") return;
         let data = ev.dataTransfer.getData("text") as SHAPE2D;
-        var current = decompose_shape(shape);
         droppable = false;
-        if (!current.includes(data)) {
-            return;
-        }
         dispatcher("shapedropped", data);
     }
 
@@ -55,6 +52,11 @@
         }
     }
 
+    let shape_1: SHAPE2D, shape_2: SHAPE2D;
+    $: {
+        shape_1 = decompose_shape(shape)[0];
+        shape_2 = decompose_shape(shape)[1];
+    }
 </script>
 
 <div on:drop={drop} on:dragover={dragover} on:dragleave={() => droppable = false} role="none" class:drop={droppable} class:selected={selected} class:compact={compact}>
@@ -64,9 +66,9 @@
     {/if}
     {#if hints}
         <div class="hints">
-            <Shape2D shape={decompose_shape(shape)[0]} draggable={false} border={false} width={28} height={28} padding={false} />
+            <Shape2D invalid={shape_1 === callout} shape={shape_1} draggable={false} border={false} width={28} height={28} padding={false} />
             <span>+</span>
-            <Shape2D shape={decompose_shape(shape)[1]} draggable={false} border={false} width={28} height={28} padding={false} />
+            <Shape2D invalid={shape_2 === callout} shape={shape_2} draggable={false} border={false} width={28} height={28} padding={false} />
         </div>
     {/if}
 </div>

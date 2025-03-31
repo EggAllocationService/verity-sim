@@ -23,10 +23,16 @@
           left: SHAPE,
           mid: SHAPE,
           right: SHAPE
-      
+
       }
   }
   const puzzles: Puzzle[] = puzzleJson as Puzzle[];
+
+  function is_pure_shape(shape: SHAPE): boolean {
+    return shape === SHAPE.CUBE || 
+           shape === SHAPE.SPHERE || 
+           shape === SHAPE.PYRAMID;
+  }
 
   enum SelectedSlot {
     LEFT = "left",
@@ -41,16 +47,44 @@
     selected: { slot: SelectedSlot; shape: SHAPE2D } | null;
   };
 
-  let calls: Callouts;
-  let state: PuzzleState;
-  randomize();
+  let { calls, state } = randomize();
   let num_swaps: number = 0;
+  let optimal_swaps: number;
+  let hint_message: string = "";
+  if (is_pure_shape(state.left) && is_pure_shape(state.mid) && is_pure_shape(state.right)) {
+    hint_message = "Three pure shapes; you can solve with three swaps";
+    optimal_swaps = 3;
+  } else {
+    if (is_pure_shape(state.left) || is_pure_shape(state.mid) || is_pure_shape(state.right)) {
+      hint_message = "One pure shape; you can solve with two swaps";
+    } else {
+      hint_message = "No pure shapes; you can solve with two swaps";
+    }
+    optimal_swaps = 2;
+  }
   let is_complete: boolean = false;
   let start_time: number = Date.now();
   let show_hints = window.localStorage.getItem("show_hints") === "true";
   let use_image_callouts = (window.localStorage.getItem("use_image_callouts") === "true") || true;
   let use_realistic_drops = window.localStorage.getItem("use_realistic_drops") === "true";
   let challenge_mode = window.localStorage.getItem("challenge_mode") === "true";
+  let knights = {
+    left: true,
+    mid: true,
+    right: true
+  };
+  let ogre_mode = false;
+  let ogres = {
+    left: false,
+    mid: false,
+    right: false
+  };
+  let shape_timer: Record<SelectedSlot, number | undefined> = {
+    left: undefined,
+    mid: undefined,
+    right: undefined
+  };
+
   $: {
     window.localStorage.setItem("show_hints", show_hints.toString());
     window.localStorage.setItem("use_image_callouts", use_image_callouts.toString());
@@ -66,6 +100,11 @@
   $: {
     if (!use_realistic_drops) {
       disabled = {left: false, mid: false, right: false};
+      knights = {
+        left: false,
+        mid: false,
+        right: false
+      };
     }
   }
   $: {
@@ -76,16 +115,18 @@
 
   function randomize() {
     var i = Math.floor(Math.random() * puzzles.length);
-    calls = {
-      left: puzzles[i].inside.left,
-      mid: puzzles[i].inside.mid,
-      right: puzzles[i].inside.right,
-    };
-    state = {
-      left: puzzles[i].outside.left,
-      mid: puzzles[i].outside.mid,
-      right: puzzles[i].outside.right,
-      selected: null,
+    return {
+      calls: {
+        left: puzzles[i].inside.left,
+        mid: puzzles[i].inside.mid,
+        right: puzzles[i].inside.right,
+      },
+      state: {
+        left: puzzles[i].outside.left,
+        mid: puzzles[i].outside.mid,
+        right: puzzles[i].outside.right,
+        selected: null,
+      }
     };
   }
 
@@ -108,29 +149,92 @@
     );
   }
 
+  function kill_knight(slot: SelectedSlot): (ev: MouseEvent) => void {
+    return (ev) => {
+      knights[slot] = false;
+      shape_timer[slot] = setTimeout(() => {
+        if (use_realistic_drops) {
+          hint_message = `The ${slot} shape despawned since it wasn't used in time`;
+          disabled[slot] = true;
+        }
+      }, 10000); // leave the shape on the "ground" for 10 seconds
+    };
+  }
+
+  function kill_ogre(slot: SelectedSlot): (ev: MouseEvent) => void {
+    return (ev) => {
+      ogres[slot] = false;
+
+      if (!ogres.left && !ogres.right) {
+        // Both ogres were killed, so reset the knights and symbols and clear
+        // any existing hint message.
+        clear_timers();
+        setTimeout(() => {
+          ogre_mode = false;
+          disabled = {left: false, mid: false, right: false};
+          knights = {left: true, mid: true, right: true};
+          hint_message = "";
+          // reset after 3 seconds to allow for the kill animation to run
+        }, 3000);
+      }
+    };
+  }
+
+  function onDragStart(slot: SelectedSlot): (ev: CustomEvent<SHAPE2D>) => void {
+    return (event) => {
+      if (shape_timer[slot]) {
+        // clear the existing timer; starting a drag on a shape is like picking it up...
+        clearTimeout(shape_timer[slot]);
+        shape_timer[slot] = undefined;
+      }
+    };
+  }
+
   function onDropped(slot: SelectedSlot): (ev: CustomEvent<SHAPE2D>) => void {
     return (event) => {
       let shape = event.detail;
       let newState = { ...state };
       let existing: SHAPE2D[] = decompose_shape(newState[slot]);
+      console.log('existing', existing, 'shape', shape);
       if (!existing.includes(shape)) {
         // Symbol not placed in right slot
+        console.log('exception 1');
+        $: hint_message = "You can't use that shape here; the currently held 3D shape doesn't include it";
         return;
       }
-      if (newState.selected?.slot == slot) return; // selecting same slot dont work
+
+      console.log('newState.selected', newState.selected, 'shape', slot);
+      if (newState.selected?.slot == slot) {
+        console.log('exception 2');
+        $: hint_message = "You can't use that shape here; this statue is already active for swapping a shape";
+        return; // selecting same slot dont work
+      }
+
       if (use_realistic_drops) {
+        let startSlot;
         if (event.detail == SHAPE2D.CIRCLE) {
-          disabled.left = true;
+          startSlot = SelectedSlot.LEFT;
         } else if (event.detail == SHAPE2D.TRIANGLE) {
-          disabled.mid = true;
+          startSlot = SelectedSlot.MID;
         } else {
-          disabled.right = true;
+          startSlot = SelectedSlot.RIGHT;
         }
+        if (shape_timer[startSlot]) {
+          clearTimeout(shape_timer[startSlot]);
+          shape_timer[startSlot] = undefined;
+        }
+        disabled[startSlot] = true;
+        $: hint_message = "";
+
+        // if all symbols have been disabled (removed from the field),
+        // bring out the ogres!
         if (disabled.left && disabled.mid && disabled.right) {
-          disabled = {left: false, mid: false, right: false};
+          $: hint_message = "Watch out for unstoppable ogres!";
+          ogre_mode = true;
+          ogres = { left: true, mid: false, right: true };
         }
       }
-      
+  
       if (newState.selected == null) {
         // select this slot
         newState.selected = { slot, shape };
@@ -139,7 +243,7 @@
         let sA: SHAPE2D[] = decompose_shape(newState[newState.selected.slot]); // selected
         let sB: SHAPE2D[] = decompose_shape(newState[slot]); // dropped
 
-        // remove slected shape from selected slot
+        // remove selected shape from selected slot
         sA = remove_one_item_from_array(sA, newState.selected.shape);
         // remove dropped shape from dropped slot
         sB = remove_one_item_from_array(sB, shape);
@@ -161,17 +265,39 @@
       setTimeout(() => {
         state = newState;
         is_complete = isComplete(state, calls);
+        if (is_complete) {
+          ogre_mode = false;
+          clear_timers();
+        }
       }, 10);
     };
   }
   let disabled: {left: boolean, mid: boolean, right: boolean} = {left: false, mid: false, right: false};
 
+  function clear_timers() {
+    // reset any shape_timers
+    Object.keys(shape_timer).forEach((key) => {
+      const k = key as SelectedSlot;
+      if (shape_timer[k]) {
+        clearTimeout(shape_timer[k]);
+        shape_timer[k] = undefined;
+      }
+    });
+  }
+
   function reset() {
-    randomize();
+    let { calls: newCalls, state: newState } = randomize();
+    calls = newCalls;
+    state = newState;
+    hint_message = "";
     num_swaps = 0;
     is_complete = false;
     start_time = Date.now();
+    clear_timers();
     disabled = {left: false, mid: false, right: false};
+    ogres = {left: false, mid: false, right: false};
+    knights = {left: true, mid: true, right: true};
+    ogre_mode = false;
   }
   import helpurl from "./assets/question.svg";
     import FoldRegion from "./lib/FoldRegion.svelte";
@@ -188,7 +314,7 @@
           <input type="checkbox" bind:checked={show_hints} id="hints" />
         </span>
         <span>
-          <label for="img_calls">Image Callouts: </label>
+          <label for="img_calls">Image Callouts:</label>
           <input type="checkbox" bind:checked={use_image_callouts} id="img_calls" />
         </span>
         <span>
@@ -220,42 +346,70 @@
     <div class="state-symbols">
       <Shape
         shape={state.left}
+        callout={calls.left}
         selected={state.selected?.slot === SelectedSlot.LEFT}
         on:shapedropped={onDropped(SelectedSlot.LEFT)}
         hints={show_hints}
       />
       <Shape
         shape={state.mid}
+        callout={calls.mid}
         selected={state.selected?.slot === SelectedSlot.MID}
         on:shapedropped={onDropped(SelectedSlot.MID)}
         hints={show_hints}
       />
       <Shape
         shape={state.right}
+        callout={calls.right}
         selected={state.selected?.slot === SelectedSlot.RIGHT}
         on:shapedropped={onDropped(SelectedSlot.RIGHT)}
         hints={show_hints}
       />
     </div>
+    {#if show_hints && hint_message}
+      <div id="hint">
+        <strong>Hint:</strong> {hint_message}
+      </div>
+    {/if}
   </div>
 </main>
 <div class="toolbox">
   <div class="toolbox-symbols">
-    <Shape2D
-      shape={SHAPE2D.CIRCLE}
-      on:shapedropped={onDropped(SelectedSlot.LEFT)}
-      disabled={disabled.left}
-    />
-    <Shape2D
-      shape={SHAPE2D.TRIANGLE}
-      on:shapedropped={onDropped(SelectedSlot.MID)}
-      disabled={disabled.mid}
-    />
-    <Shape2D
-      shape={SHAPE2D.SQUARE}
-      on:shapedropped={onDropped(SelectedSlot.RIGHT)}
-      disabled={disabled.right}
-    />
+    {#if ogre_mode}
+      <img on:click={kill_ogre(SelectedSlot.LEFT)} class={"enemy " + (!ogres.left ? "dead": "") } src="/hive-ogre-champion.png" height="98" width="98" alt="Hive Ogre" />
+      <img on:click={kill_ogre(SelectedSlot.RIGHT)} class={"flip-horizontal enemy " + (!ogres.right ? "dead": "")} src="/hive-ogre-champion.png" height="98" width="98" alt="Hive Ogre" />
+    {:else}
+      {#if use_realistic_drops && knights[SelectedSlot.LEFT]}
+        <img class="flip-horizontal enemy" on:click={kill_knight(SelectedSlot.LEFT)} src="/hive-knight.png" height="98" width="98" alt="Hive Knight" />
+      {:else}
+        <Shape2D
+          shape={SHAPE2D.CIRCLE}
+          on:shapedragstart={onDragStart(SelectedSlot.LEFT)}
+          on:shapedropped={onDropped(SelectedSlot.LEFT)}
+          disabled={disabled.left}
+        />
+      {/if}
+      {#if use_realistic_drops && knights[SelectedSlot.MID]}
+        <img class="enemy" on:click={kill_knight(SelectedSlot.MID)} src="/hive-knight.png" height="98" width="98" alt="Hive Knight">
+      {:else}
+        <Shape2D
+          shape={SHAPE2D.TRIANGLE}
+          on:shapedragstart={onDragStart(SelectedSlot.MID)}
+          on:shapedropped={onDropped(SelectedSlot.MID)}
+          disabled={disabled.mid}
+        />
+      {/if}
+      {#if use_realistic_drops && knights[SelectedSlot.RIGHT]}
+        <img class="enemy" on:click={kill_knight(SelectedSlot.RIGHT)} src="/hive-knight.png" height="98" width="98" alt="Hive Knight">
+      {:else}
+        <Shape2D
+          shape={SHAPE2D.SQUARE}
+          on:shapedragstart={onDragStart(SelectedSlot.RIGHT)}
+          on:shapedropped={onDropped(SelectedSlot.RIGHT)}
+          disabled={disabled.right}
+        />
+      {/if}
+    {/if}
   </div>
 </div>
 <div id ="credit">
@@ -272,6 +426,10 @@
           (Date.now() - start_time) /
           1000
         ).toFixed(2)} seconds!
+        {#if !challenge_mode && num_swaps > optimal_swaps}
+          <br>
+          But... you only needed to do {optimal_swaps} swaps for this one!
+        {/if}
       </p>
       <h2>
         Your Solution:
@@ -303,6 +461,9 @@
     justify-content: center;
     gap: 16px;
     margin: 8px;
+  }
+  #hint {
+    font-style: italic;
   }
   #popup {
     z-index: 50;
@@ -419,5 +580,26 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+  }
+
+  .dead {
+    opacity: 0.5 !important;
+    transform: scaleX(1) rotate(90deg) !important;
+  }
+
+  .enemy {
+    cursor: crosshair;
+    opacity: 1;
+    transform: scaleX(1) rotate(0deg);
+    transform-origin: 47% 85%;
+    transition: transform 0.5s ease-in-out, opacity 1s ease-in-out 1s;
+  }
+
+  .flip-horizontal {
+    transform: scaleX(-1) rotate(0deg);
+  }
+
+  .flip-horizontal.dead {
+    transform: scaleX(-1) rotate(90deg) !important;
   }
 </style>
