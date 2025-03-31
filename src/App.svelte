@@ -198,15 +198,13 @@
       console.log('existing', existing, 'shape', shape);
       if (!existing.includes(shape)) {
         // Symbol not placed in right slot
-        console.log('exception 1');
-        $: hint_message = "You can't use that shape here; the currently held 3D shape doesn't include it";
+        hint_message = "You can't use that shape here; the currently held 3D shape doesn't include it";
         return;
       }
 
       console.log('newState.selected', newState.selected, 'shape', slot);
       if (newState.selected?.slot == slot) {
-        console.log('exception 2');
-        $: hint_message = "You can't use that shape here; this statue is already active for swapping a shape";
+        hint_message = "You can't use that shape here; this statue is already active for swapping a shape";
         return; // selecting same slot dont work
       }
 
@@ -224,12 +222,12 @@
           shape_timer[startSlot] = undefined;
         }
         disabled[startSlot] = true;
-        $: hint_message = "";
+        hint_message = "";
 
         // if all symbols have been disabled (removed from the field),
         // bring out the ogres!
         if (disabled.left && disabled.mid && disabled.right) {
-          $: hint_message = "Watch out for unstoppable ogres!";
+          hint_message = "Watch out for unstoppable ogres!";
           ogre_mode = true;
           ogres = { left: true, mid: false, right: true };
         }
@@ -376,11 +374,11 @@
 <div class="toolbox">
   <div class="toolbox-symbols">
     {#if ogre_mode}
-      <img on:click={kill_ogre(SelectedSlot.LEFT)} class={"enemy " + (!ogres.left ? "dead": "") } src="/hive-ogre-champion.png" height="98" width="98" alt="Hive Ogre" />
-      <img on:click={kill_ogre(SelectedSlot.RIGHT)} class={"flip-horizontal enemy " + (!ogres.right ? "dead": "")} src="/hive-ogre-champion.png" height="98" width="98" alt="Hive Ogre" />
+      <button on:click={kill_ogre(SelectedSlot.LEFT)}><img class={"enemy ogre " + (!ogres.left ? "dead": "") } src="/hive-ogre-champion.png" height="98" width="98" alt="Hive Ogre" /></button>
+      <button on:click={kill_ogre(SelectedSlot.RIGHT)}><img class={"flip-horizontal enemy ogre " + (!ogres.right ? "dead": "")} src="/hive-ogre-champion.png" height="98" width="98" alt="Hive Ogre" /></button>
     {:else}
       {#if use_realistic_drops && knights[SelectedSlot.LEFT]}
-        <img class="flip-horizontal enemy" on:click={kill_knight(SelectedSlot.LEFT)} src="/hive-knight.png" height="98" width="98" alt="Hive Knight" />
+        <button on:click={kill_knight(SelectedSlot.LEFT)}><img class="flip-horizontal enemy knight" src="/hive-knight.png" height="98" width="98" alt="Hive Knight" /></button>
       {:else}
         <Shape2D
           shape={SHAPE2D.CIRCLE}
@@ -390,7 +388,7 @@
         />
       {/if}
       {#if use_realistic_drops && knights[SelectedSlot.MID]}
-        <img class="enemy" on:click={kill_knight(SelectedSlot.MID)} src="/hive-knight.png" height="98" width="98" alt="Hive Knight">
+        <button on:click={kill_knight(SelectedSlot.MID)}><img class="enemy knight" src="/hive-knight.png" height="98" width="98" alt="Hive Knight"></button>
       {:else}
         <Shape2D
           shape={SHAPE2D.TRIANGLE}
@@ -400,7 +398,7 @@
         />
       {/if}
       {#if use_realistic_drops && knights[SelectedSlot.RIGHT]}
-        <img class="enemy" on:click={kill_knight(SelectedSlot.RIGHT)} src="/hive-knight.png" height="98" width="98" alt="Hive Knight">
+      <button on:click={kill_knight(SelectedSlot.RIGHT)}><img class="enemy knight" src="/hive-knight.png" height="98" width="98" alt="Hive Knight"></button>
       {:else}
         <Shape2D
           shape={SHAPE2D.SQUARE}
@@ -587,12 +585,19 @@
     transform: scaleX(1) rotate(90deg) !important;
   }
 
+  button:focus:has(.ogre) {
+    outline: none;
+  }
+
   .enemy {
     cursor: crosshair;
     opacity: 1;
     transform: scaleX(1) rotate(0deg);
-    transform-origin: 47% 85%;
     transition: transform 0.5s ease-in-out, opacity 1s ease-in-out 1s;
+  }
+
+  .enemy.ogre {
+    transform-origin: 47% 85%;
   }
 
   .flip-horizontal {
