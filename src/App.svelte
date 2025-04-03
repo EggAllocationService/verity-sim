@@ -51,6 +51,7 @@
   let num_swaps: number = 0;
   let optimal_swaps: number;
   let hint_message: string = "";
+$: {
   if (is_pure_shape(state.left) && is_pure_shape(state.mid) && is_pure_shape(state.right)) {
     hint_message = "Three pure shapes; you can solve with three swaps";
     optimal_swaps = 3;
@@ -62,6 +63,7 @@
     }
     optimal_swaps = 2;
   }
+}
   let is_complete: boolean = false;
   let start_time: number = Date.now();
   let show_hints = window.localStorage.getItem("show_hints") === "true";
@@ -113,7 +115,33 @@
     challenge_things.right = construct_shape_from_2d(calls.mid, calls.mid);
   }
 
-  function randomize() {
+$: {
+  // if all symbols have been disabled (removed from the field),
+  // bring out the ogres!
+  if (disabled.left && disabled.mid && disabled.right) {
+    hint_message = "Watch out for unstoppable ogres!";
+    ogre_mode = true;
+    ogres = { left: true, mid: false, right: true };
+  }
+}
+
+  function randomize(): {
+    calls: {
+      left: SHAPE2D,
+      mid: SHAPE2D,
+      right: SHAPE2D
+    },
+    state: {
+      left: SHAPE,
+      mid: SHAPE,
+      right: SHAPE,
+      selected: null | {
+        slot: SelectedSlot,
+        shape: SHAPE2D
+      }
+
+    }
+  } {
     var i = Math.floor(Math.random() * puzzles.length);
     return {
       calls: {
@@ -223,14 +251,6 @@
         }
         disabled[startSlot] = true;
         hint_message = "";
-
-        // if all symbols have been disabled (removed from the field),
-        // bring out the ogres!
-        if (disabled.left && disabled.mid && disabled.right) {
-          hint_message = "Watch out for unstoppable ogres!";
-          ogre_mode = true;
-          ogres = { left: true, mid: false, right: true };
-        }
       }
   
       if (newState.selected == null) {
