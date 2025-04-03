@@ -1,9 +1,12 @@
 <script lang="ts">
     import { SHAPE, SHAPE2D, decompose_shape } from "./shapes";
+    import { createEventDispatcher } from "svelte";
 
     import circleUrl from "../assets/circle.svg";
     import squareUrl from "../assets/square.svg";
     import triangleUrl from "../assets/triangle.svg";
+
+    const dispatcher = createEventDispatcher<{shapedragstart: SHAPE2D}>();
 
     function get2DURL(shape: SHAPE2D) {
         switch (shape) {
@@ -24,6 +27,7 @@
     export let padding = true;
     export let image = true;
     export let disabled = false;
+    export let invalid = false;
 
     export let draggable: boolean = true;
 
@@ -33,13 +37,15 @@
         ev.dataTransfer!.clearData();
         ev.dataTransfer!.setData("text", shape);
         ev.dataTransfer!.effectAllowed = 'move';
+        dispatcher("shapedragstart", shape);
+
         console.log("Sent:", ev);
     }
 </script>
 
 {#if image} 
 <div draggable={draggable && !disabled} on:dragstart={dragStart} role="none" class:border={border} class:padding={padding} class:disabled={disabled}>
-    <img {width} {height} src={get2DURL(shape)} alt="" draggable="false" />
+    <img class:invalid={invalid} {width} {height} src={get2DURL(shape)} alt="" draggable="false" />
 </div>
 {:else}
 <div draggable={draggable} on:dragstart={dragStart} role="none" class:border={border} class:padding={padding}>
@@ -73,6 +79,10 @@
     }
     div.border {
         border: 1px solid black;
+    }
+
+    .invalid {
+        filter: invert(33%) sepia(83%) saturate(5171%) hue-rotate(348deg) brightness(86%) contrast(141%);
     }
 
     @media (prefers-color-scheme: dark) {
