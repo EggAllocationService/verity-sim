@@ -44,11 +44,11 @@
 </script>
 
 {#if image} 
-<div draggable={draggable && !disabled} on:dragstart={dragStart} role="none" class:border={border} class:padding={padding} class:disabled={disabled}>
+<div draggable={draggable && !disabled} on:dragstart={dragStart} role="none" class:border={border} class:padding={padding} class:disabled={disabled} class:draggable={draggable}>
     <img class:invalid={invalid} {width} {height} src={get2DURL(shape)} alt="" draggable="false" />
 </div>
 {:else}
-<div draggable={draggable} on:dragstart={dragStart} role="none" class:border={border} class:padding={padding}>
+<div draggable={draggable} on:dragstart={dragStart} role="none" class:border={border} class:padding={padding} class:draggable={draggable}>
     <div style:width={width + "px"} style:height={height + "px"} class="text">
         {shape.charAt(0).toUpperCase()}
     </div>
@@ -83,6 +83,10 @@
 
     .invalid {
         filter: invert(33%) sepia(83%) saturate(5171%) hue-rotate(348deg) brightness(86%) contrast(141%);
+    }
+
+    .draggable:not(.disabled) {
+        cursor: move;
     }
 
     @media (prefers-color-scheme: dark) {
