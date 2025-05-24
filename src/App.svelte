@@ -161,9 +161,9 @@ $: {
   function isComplete(state: PuzzleState, calls: Callouts): boolean {
     if (challenge_mode) {
       return (
-        state.left == challenge_things.left &&
-        state.mid == challenge_things.mid &&
-        state.right == challenge_things.right
+        is_pure_shape(state.left) && !decompose_shape(state.left).includes(calls.left) &&
+        is_pure_shape(state.mid) && !decompose_shape(state.mid).includes(calls.mid) &&
+        is_pure_shape(state.right) && !decompose_shape(state.right).includes(calls.right)
       );
     }
     // check that for each slot, the 2d shape plus the decomposed 3d shape is all three 2d shapes
@@ -336,8 +336,11 @@ $: {
           <input type="checkbox" bind:checked={use_image_callouts} id="img_calls" />
         </span>
         <span>
-          <label for="challenge_mode">Challenge Mode <Tooltip text={"For verity's challenge. Takes each statue's shape, makes it 3D, and rotates it one to the right. Check \"Show Hints\" to see the correct solution."}>
-            <img src={helpurl} alt="question mark" width={16} height={16} style="filter: invert(1.0); opacity: 0.5;" /></Tooltip>: </label>
+          <label for="challenge_mode">Challenge Mode 
+            <Tooltip text={"For verity's challenge. Requires a \"pure\" 3d shape for each statue, made up of two identical 2d shapes. Check \"Show Hints\" to see a correct solution."}>
+              <img src={helpurl} alt="question mark" width={16} height={16} style="filter: invert(1.0); opacity: 0.5;" />
+            </Tooltip>: 
+          </label>
           <input type="checkbox" bind:checked={challenge_mode} id="challenge_mode" />
         </span>
         <span>
