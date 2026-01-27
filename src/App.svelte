@@ -51,19 +51,8 @@
   let num_swaps: number = 0;
   let optimal_swaps: number;
   let hint_message: string = "";
-$: {
-  if (is_pure_shape(state.left) && is_pure_shape(state.mid) && is_pure_shape(state.right)) {
-    hint_message = "Three pure shapes; you can solve with three swaps";
-    optimal_swaps = 3;
-  } else {
-    if (is_pure_shape(state.left) || is_pure_shape(state.mid) || is_pure_shape(state.right)) {
-      hint_message = "One pure shape; you can solve with two swaps";
-    } else {
-      hint_message = "No pure shapes; you can solve with two swaps";
-    }
-    optimal_swaps = 2;
-  }
-}
+  calculate_optimal_solution();
+
   let is_complete: boolean = false;
   let start_time: number = Date.now();
   let show_hints = window.localStorage.getItem("show_hints") === "true";
@@ -124,6 +113,20 @@ $: {
     ogres = { left: true, mid: false, right: true };
   }
 }
+
+  function calculate_optimal_solution() {
+    if (is_pure_shape(state.left) && is_pure_shape(state.mid) && is_pure_shape(state.right)) {
+      hint_message = "Three pure shapes; you can solve with three swaps";
+      optimal_swaps = 3;
+    } else {
+      if (is_pure_shape(state.left) || is_pure_shape(state.mid) || is_pure_shape(state.right)) {
+        hint_message = "One pure shape; you can solve with two swaps";
+      } else {
+        hint_message = "No pure shapes; you can solve with two swaps";
+      }
+      optimal_swaps = 2;
+    }
+  }
 
   function randomize(): {
     calls: {
@@ -305,6 +308,7 @@ $: {
 
   function reset() {
     let { calls: newCalls, state: newState } = randomize();
+    calculate_optimal_solution();
     calls = newCalls;
     state = newState;
     hint_message = "";
